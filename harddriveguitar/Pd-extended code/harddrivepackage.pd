@@ -158,8 +158,7 @@ this way for clarity and copy-paste-ability.;
 #X connect 64 0 42 0;
 #X connect 65 0 3 0;
 #X restore 36 245 pd sendchord;
-#N canvas 260 286 981 300 analogroute 0;
-#X obj 78 60 arduino 0;
+#N canvas 260 286 981 300 analogroute 1;
 #X obj 84 97 route analog;
 #X obj 94 135 route 0 1 2 3 4 5;
 #X floatatom 62 182 5 0 0 0 - - -;
@@ -190,21 +189,22 @@ a0 controls a 'noise' element \, and a5 controls pitch bend.;
 #X text 199 95 receives data from 'analog inputs' of arduino \, which
 must be routed into individual data streams - arduino must have "Firmata
 Simple Analog" code running for this to work!.;
+#X obj 78 60 arduino 7;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
-#X connect 2 0 3 0;
-#X connect 2 1 4 0;
-#X connect 2 2 5 0;
-#X connect 2 3 6 0;
-#X connect 2 4 7 0;
-#X connect 2 5 8 0;
-#X connect 3 0 9 0;
-#X connect 4 0 10 0;
-#X connect 5 0 11 0;
-#X connect 6 0 12 0;
+#X connect 1 1 3 0;
+#X connect 1 2 4 0;
+#X connect 1 3 5 0;
+#X connect 1 4 6 0;
+#X connect 1 5 7 0;
+#X connect 2 0 8 0;
+#X connect 3 0 12 0;
+#X connect 4 0 11 0;
+#X connect 5 0 10 0;
+#X connect 6 0 9 0;
 #X connect 7 0 13 0;
-#X connect 8 0 14 0;
-#X connect 15 0 0 0;
+#X connect 14 0 19 0;
+#X connect 19 0 0 0;
 #X restore 32 66 pd analogroute;
 #N canvas 45 79 1279 583 chordfader 0;
 #X floatatom 93 103 5 0 0 0 - - -;
@@ -235,7 +235,7 @@ Simple Analog" code running for this to work!.;
 #X obj 494 14 inlet;
 #X obj 255 557 outlet;
 #X obj 252 510 min 1;
-#X obj 225 213 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 225 213 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X floatatom 263 145 5 0 0 0 - - -;
 #X obj 265 289 +;
@@ -465,7 +465,7 @@ Simple Analog" code running for this to work!.;
 #X obj 441 12 inlet;
 #X obj 494 14 inlet;
 #X obj 255 557 outlet;
-#X obj 225 213 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 225 213 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X floatatom 263 145 5 0 0 0 - - -;
 #X obj 265 289 +;
@@ -521,7 +521,7 @@ Simple Analog" code running for this to work!.;
 #X obj 494 14 inlet;
 #X obj 255 557 outlet;
 #X obj 252 510 min 1;
-#X obj 225 213 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 225 213 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X floatatom 263 145 5 0 0 0 - - -;
 #X obj 265 289 +;
